@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "service_name": "Appoint a Doctor",
+        "fee": "$47.29",
+        "delivery_time": 1,
+        "img_url": "https://i.ibb.co/ZGSdbh4/s1.jpg",
+        "description": "Insert/replac skull tong"
+    },
+    {
+        "id": 2,
+        "service_name": "Medical Testing",
+        "fee": "$49.49",
+        "delivery_time": 2,
+        "img_url": "https://i.ibb.co/qWbs4Db/s1.jpg",
+        "description": "Implnt/fit pros limb NOS"
+    },
+    {
+        "id": 3,
+        "service_name": "Medicine",
+        "fee": "$52.88",
+        "delivery_time": 3,
+        "img_url": "https://i.ibb.co/cD2h05K/s2.jpg",
+        "description": "Chorioret les destr NEC"
+    },
+    {
+        "id": 4,
+        "service_name": "World class Hospitals",
+        "fee": "$91.06",
+        "delivery_time": 4,
+        "img_url": " https://i.ibb.co/QnWSTZ6/s4.jpg",
+        "description": "Tendon sheath explorat"
+    },
+    {
+        "id": 5,
+        "service_name": "Nursing Care",
+        "fee": "$73.37",
+        "delivery_time": 5,
+        "img_url": "https://i.ibb.co/kcmYStR/s5.jpg",
+        "description": "Oth dx proced-femur"
+    },
+    {
+        "id": 6,
+        "service_name": "Regular Checkups",
+        "fee": "$98.84",
+        "delivery_time": 6,
+        "img_url": "https://i.ibb.co/3FGdRBQ/s6.jpg",
+        "description": "Other plastic ops muscle"
+    }
+]
