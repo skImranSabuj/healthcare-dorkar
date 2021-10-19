@@ -12,6 +12,7 @@ const useFirebase = () => {
     const [error, setError] = useState('');
     const [isLogin, setIsLogin] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
 
     const auth = getAuth();
     const handlename = (e) => {
@@ -31,10 +32,6 @@ const useFirebase = () => {
             setError('Password should be at least 6 characters');
             return
         }
-        if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
-            setError('Password must contain two uppercase letters');
-            return
-        }
         isLogin ? processLogin(email, password) : registerNewUser(email, password)
 
     }
@@ -43,7 +40,7 @@ const useFirebase = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                console.log('From Login', user);
+                setUser(user);
                 setError('');
             })
             .catch((error) => {
@@ -53,43 +50,22 @@ const useFirebase = () => {
     const registerNewUser = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed in 
                 const user = userCredential.user;
-                console.log(user);
+                setUser(user);
                 setError('');
-                verifyEmail();
                 addDisplayName();
             })
             .catch((error) => {
-                // const errorCode = error.code;
                 setError(error.message);
-                // ..
-            });
-    }
-    const handleResetPassword = () => {
-        sendPasswordResetEmail(auth, email)
-            .then((result) => {
-                //...
-            })
-            .catch((error) => {
-                setError(error.message);
-                // ..
+
             });
     }
     const signInUsingGoogle = () => {
         setIsLoading(true);
         const googleProvider = new GoogleAuthProvider();
 
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                setUser(result.user);
-            })
-            .finally(() => setIsLoading(false));
-    }
-    const verifyEmail = () => {
-        sendEmailVerification(auth.currentUser)
-            .then(() => {
-            });
+        return signInWithPopup(auth, googleProvider)
+            .finally(() => { setIsLoading(false) });
     }
     const addDisplayName = () => {
         updateProfile(auth.currentUser, {
@@ -120,9 +96,9 @@ const useFirebase = () => {
     }
 
     return {
-        user,
-        isLoading,
-        signInUsingGoogle,
+        user, name, email, password, error, isLoading,
+        isLoading, handlePassword, handleEmail, handlename,
+        signInUsingGoogle, processLogin,
         logOut
     }
 }

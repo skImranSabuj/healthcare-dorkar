@@ -7,19 +7,19 @@ import useAuth from '../../../hooks/useAuth';
 const signIn = <FontAwesomeIcon icon={faSignInAlt} />
 
 const Register = () => {
-    const { user,signInUsingGoogle } = useAuth();
+    const { user, signInUsingGoogle, handlePassword, handleEmail, handlename } = useAuth();
     return (
         <div className="login-form-container">
             <div className="login-form">
                 <h2>Create an account</h2>
                 <form className="">
-                    <input className="form-control" type="text" name="" id="" placeholder="Your Name" />
+                    <input onBlur={handlename} className="form-control" type="text" name="" id="" placeholder="Your Name" />
                     <br />
-                    <input className="form-control" type="email" name="" id="" placeholder="Your Email" />
+                    <input onBlur={handleEmail} className="form-control" type="email" name="" id="" placeholder="Your Email" />
                     <br />
                     <input className="form-control" type="password" name="" id="" placeholder="Your password" />
                     <br />
-                    <input className="form-control" type="password" name="" id="" placeholder="Confirm password" />
+                    <input onBlur={handlePassword} className="form-control" type="password" name="" id="" placeholder="Confirm password" />
                     <br />
                     <input className="btn-menual" type="submit" value="Register" />
                 </form>

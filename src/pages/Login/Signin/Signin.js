@@ -1,22 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import './Signin.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import useAuth from '../../../hooks/useAuth';
 const signIn = <FontAwesomeIcon icon={faSignInAlt} />
 const Signin = () => {
-    const { signInUsingGoogle } = useAuth();
+    const { signInUsingGoogle, handleEmail, handlePassword, processLogin } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/home';
     // const onSubmit = data => console.log(data);
     //defaultValue="test"
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                history.push(redirect_uri);
+            })
+    }
     return (
         <div className="login-form-container">
             <div className="login-form">
                 <h2>Sign in or create an account</h2>
-                <form className="">
-                    <input className="form-control" type="email" name="" id="" placeholder="Your Email" />
+                <form onSubmit={processLogin}>
+                    <input onBlur={handleEmail} className="form-control" type="email" name="" id="" placeholder="Your Email" />
                     <br />
-                    <input className="form-control" type="password" name="" id="" placeholder="Your password" />
+                    <input onBlur={handlePassword} className="form-control" type="password" name="" id="" placeholder="Your password" />
                     <br />
                     <input className="btn-menual" type="submit" value="Login" />
                 </form>
@@ -24,7 +33,7 @@ const Signin = () => {
                 <div>-------or--------</div>
                 <button
                     className="btn-menual"
-                    onClick={signInUsingGoogle}
+                    onClick={handleGoogleLogin}
                 >{signIn} Google Sign In</button>
             </div>
         </div>

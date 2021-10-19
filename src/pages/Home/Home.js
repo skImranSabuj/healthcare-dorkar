@@ -3,15 +3,16 @@ import { Carousel, Col, Container, Row } from 'react-bootstrap';
 import img1 from '../../images/s2.jpg';
 import img2 from '../../images/s3.jpg';
 import img3 from '../../images/s4.jpg';
+import Services from '../Services/Services';
 
 const Home = () => {
     return (
         <Container className="mt-5">
-            <Row>
+            <Row className="mb-5">
                 <Col sm={6}>
                     <h1>Welcome to Dorkar!</h1>
                     <p>Getting an accurate diagnosis can be one of the most impactful experiences that you can have — especially if you’ve been in search of that answer for a while. We can help you get there.</p>
-                    <img className="hame-image" src="https://i.ibb.co/fd8RkJy/logo.jpg" alt="" />
+                    {/* <img className="hame-image" src="https://i.ibb.co/fd8RkJy/logo.jpg" alt="" /> */}
                 </Col>
                 <Col sm={6}><div>
                     <Carousel>
@@ -54,7 +55,7 @@ const Home = () => {
                 </div></Col>
             </Row>
             <Row>
-
+                <Services></Services>
             </Row>
         </Container>
 
