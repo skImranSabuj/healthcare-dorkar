@@ -7,7 +7,6 @@ const useService = () => {
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);
-    console.log('from use useService: ', services, typeof (services));
     return services;
 };
 

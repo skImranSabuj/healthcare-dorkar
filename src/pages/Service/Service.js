@@ -8,19 +8,17 @@ import './Service.css'
 // const cartIcon = <FontAwesomeIcon icon={faShoppingCart} />
 
 const Service = (props) => {
-    const { id, service_name, img_url, description, fee } = props.service;
+    const { id, service_name, img_url, description } = props.service;
     return (
         <div>
             <div className="cards">
-                <div className="photo mt-2">
+                <div className="photo">
                     <img className="img-fluid" src={img_url} alt="" />
                 </div>
-                <h3>ID: {id}</h3>
-                <p>{service_name}</p>
-                <h6> Cost:<span className="fw-normal"> ${Math.round(fee)}</span></h6>
+                <h3>{service_name}</h3>
                 <p>{description} </p>
                 <Link to={`/details/${id}`}>
-                    <button className="btn btn-warning">{service_name} Details</button>
+                    <button className="btn btn-menual">More Details</button>
                 </Link>
             </div>
         </div>

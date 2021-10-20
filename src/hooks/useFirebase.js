@@ -1,5 +1,6 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile } from "firebase/auth";
 import { useState, useEffect } from 'react';
+import { useHistory, useLocation } from "react-router";
 import initializeAuthentication from "../pages/Login/Firebase/firebase.init";;
 
 initializeAuthentication();
@@ -10,10 +11,9 @@ const useFirebase = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const [isLogin, setIsLogin] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [loading, setLoading] = useState(true);
-
+    const history = useHistory();
     const auth = getAuth();
     const handlename = (e) => {
         setName(e.target.value)
@@ -26,22 +26,21 @@ const useFirebase = () => {
     }
     const handleRegistration = (e) => {
         e.preventDefault();
-        // console.log('Registration on process');
-        // console.log(email, password);
         if (password.length < 6) {
             setError('Password should be at least 6 characters');
             return
         }
-        isLogin ? processLogin(email, password) : registerNewUser(email, password)
+        registerNewUser(email, password)
 
     }
-    const processLogin = (email, password) => {
+    const processLogin = (e) => {
+        e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // Signed in 
                 const user = userCredential.user;
                 setUser(user);
                 setError('');
+                history.push('/home');
             })
             .catch((error) => {
                 setError(error.message);
@@ -51,9 +50,10 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
+                addDisplayName();
                 setUser(user);
                 setError('');
-                addDisplayName();
+
             })
             .catch((error) => {
                 setError(error.message);
@@ -98,7 +98,7 @@ const useFirebase = () => {
     return {
         user, name, email, password, error, isLoading,
         isLoading, handlePassword, handleEmail, handlename,
-        signInUsingGoogle, processLogin,
+        signInUsingGoogle, processLogin, handleRegistration,
         logOut
     }
 }

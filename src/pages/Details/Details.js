@@ -3,18 +3,14 @@ import { useParams } from 'react-router';
 import useService from '../../hooks/useService';
 import { services } from '../../data';
 import './Details.css'
+import { Link } from 'react-router-dom';
 export const handleDetails = (service) => {
 
 }
 const Details = () => {
     const { serviceId } = useParams();
-    // const services = useService();
-
-    console.log('Details theke:', services);
     const service = services.find(item => item.id == serviceId);
-    console.log('single Details theke:', service, typeof (service));
-    const { id, service_name, img_url, description, details, count } = service;
-    // console.log(fee, service_name)
+    const { service_name, img_url, description, details, count } = service;
     return (
         <div className="row py-3 m-0">
             <div className="col col-12 col-md-6 col-lg-4 mx-auto border p-3">
@@ -25,7 +21,10 @@ const Details = () => {
                 <div className="detail">
 
                     <p>Details: {details}</p>
-                    <button className="btn-menual">Book Service</button>
+                    <Link to="/coming">
+                        <button className="btn-menual">Book Service</button>
+                    </Link>
+
                 </div>
             </div>
         </div>

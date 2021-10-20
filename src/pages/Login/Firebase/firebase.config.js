@@ -1,4 +1,4 @@
-// console.log(process.env);
+
 const firebaseConfig = {
     apiKey: "AIzaSyBjgdzB6d89se6d0OiUF0YKSFpPhrTWwOI",
     authDomain: "healthcare-dorkar.firebaseapp.com",

@@ -10,9 +10,8 @@ const userLogo = <FontAwesomeIcon icon={faUser} />
 const signIn = <FontAwesomeIcon icon={faSignInAlt} />
 
 const Header = () => {
-    // const user = {};
+
     const { user, logOut } = useAuth();
-    // console.log(user)
     return (
         <div className="">
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
@@ -32,12 +31,13 @@ const Header = () => {
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link as={Link} to="/services">Services</Nav.Link>
                             <Nav.Link as={Link} to="/about">About</Nav.Link>
-                            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                            <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+                            <NavDropdown title="Covid 19" id="collasible-nav-dropdown">
+                                <NavDropdown.Item href="https://surokkha.gov.bd/" target="_blank">Vaccine</NavDropdown.Item>
+                                <NavDropdown.Item href="https://www.bmdc.org.bd/search-doctor" target="_blank">Doctors</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">Diagonistic</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                                <NavDropdown.Item href="https://corona.gov.bd/" target="_blank">Corona info</NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                         <Nav>
@@ -54,7 +54,7 @@ const Header = () => {
                                             <Dropdown.Item onClick={logOut} href="#/action-1" active>
                                                 LogOut
                                             </Dropdown.Item>
-                                            <Dropdown.Item href="#/action-2">Account</Dropdown.Item>
+                                            <Dropdown.Item href="/account">Account</Dropdown.Item>
                                         </DropdownButton>
                                         : <Nav.Link as={Link} to="/login">{userLogo} Login</Nav.Link>}
                                 </Navbar.Text>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import img1 from '../../images/s2.jpg';
 import img2 from '../../images/s3.jpg';
 import img3 from '../../images/s4.jpg';
+import Covid from '../Covid/Covid';
 import Services from '../Services/Services';
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
                         <button className="btn-menual">See More</button>
                     </Link>
                 </Col>
-                <Col sm={6}><div>
+                <Col sm={6}>
                     <Carousel>
                         <Carousel.Item>
                             <img
@@ -55,10 +56,13 @@ const Home = () => {
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>
-                </div></Col>
+                </Col>
             </Row>
             <Row>
                 <Services></Services>
+            </Row>
+            <Row>
+                <Covid></Covid>
             </Row>
         </Container>
 

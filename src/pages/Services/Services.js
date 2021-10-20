@@ -5,10 +5,9 @@ import './Services.css'
 
 const Services = (props) => {
     const services = useService();
-    console.log(services, "from Services!", typeof (services));
     return (
-        <div>
-            <h2>WHAT SPECIAL IN MEDICARE</h2>
+        <div className="py-5 services">
+            <h2>WHAT SPECIAL IN OUR SERVICES</h2>
             <p>We provide the best services for your health</p>
             <div className="services-container">
                 {

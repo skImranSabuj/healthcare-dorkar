@@ -18,6 +18,9 @@ import About from './pages/About/About';
 import Details from './pages/Details/Details';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import NotFound from './pages/NotFound/NotFound';
+import ComingSoon from './pages/ComingSoon/ComingSoon';
+import Contact from './pages/Contact/Contact';
+import Account from './pages/Login/Account/Account';
 
 
 function App() {
@@ -41,6 +44,12 @@ function App() {
             <Route path="/details/:serviceId">
               <Details></Details>
             </Route>
+            <PrivateRoute path="/contact">
+              <Contact></Contact>
+            </PrivateRoute>
+            <Route path="/account">
+              <Account></Account>
+            </Route>
             <Route path="/login">
               <Signin></Signin>
             </Route>
@@ -49,6 +58,9 @@ function App() {
             </Route>
             <Route path="/about">
               <About></About>
+            </Route>
+            <Route exact path="/coming">
+              <ComingSoon></ComingSoon>
             </Route>
             <Route path="*">
               <NotFound></NotFound>
