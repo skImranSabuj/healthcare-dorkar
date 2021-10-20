@@ -4,5 +4,13 @@
 .home-banner{
     border-radius: 15px;
     border: 2px sloid black;
-    
+
+}
+.other{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)
+}
+.other img{
+    width: 60%;
+    margin: 0 auto;
 }

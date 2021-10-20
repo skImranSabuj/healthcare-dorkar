@@ -6,6 +6,10 @@ import img2 from '../../images/s3.jpg';
 import img3 from '../../images/s4.jpg';
 import Covid from '../Covid/Covid';
 import Services from '../Services/Services';
+import amb from '../../images/amb.png';
+import support from '../../images/support.png';
+import hotline from '../../images/hotline.jpg';
+import './Home.css';
 
 const Home = () => {
     return (
@@ -63,6 +67,14 @@ const Home = () => {
             </Row>
             <Row>
                 <Covid></Covid>
+            </Row>
+            <Row>
+                <h2 className="fw-bold mt-3">Other Features</h2>
+                <div className="other pb-5">
+                    <div className="other-img"><img src={amb} alt="" /></div>
+                    <div className="other-img"><img src={hotline} alt="" /></div>
+                    <div className="other-img"> <img src={support} alt="" /></div>
+                </div>
             </Row>
         </Container>
 

@@ -7,7 +7,7 @@ const Services = (props) => {
     const services = useService();
     return (
         <div className="py-5 services">
-            <h2>WHAT SPECIAL IN OUR SERVICES</h2>
+            <h2 className="fw-bold">WHAT SPECIAL IN OUR SERVICES</h2>
             <p>We provide the best services for your health</p>
             <div className="services-container">
                 {

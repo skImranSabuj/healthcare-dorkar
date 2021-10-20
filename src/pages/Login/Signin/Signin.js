@@ -4,9 +4,10 @@ import './Signin.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import useAuth from '../../../hooks/useAuth';
+import userEvent from '@testing-library/user-event';
 const signIn = <FontAwesomeIcon icon={faSignInAlt} />
 const Signin = () => {
-    const { signInUsingGoogle, handleEmail, handlePassword, processLogin } = useAuth();
+    const { signInUsingGoogle, handleEmail, handlePassword, processLogin, error, user } = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/home';
@@ -25,6 +26,7 @@ const Signin = () => {
                     <br />
                     <input onBlur={handlePassword} className="form-control" type="password" name="" id="" placeholder="Your password" />
                     <br />
+                    {user.email ? '' : <p className="text-danger">{error}</p>}
                     <input className="btn-menual" type="submit" value="Login" />
                 </form>
                 <p>not a member? <Link to="/register">Register</Link></p>

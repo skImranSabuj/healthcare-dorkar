@@ -4,16 +4,20 @@ import './Covid.css';
 
 const Covid = () => {
     return (
-        <div>
-            <div className="covid row bg-info">
-                <div className="covid-info col-md-4">
-                    <h1>Total Case</h1>
+        <div className="my-3">
+            <h2 className="fw-bold">COVID 19 Updates</h2>
+            <div className="row d-flex justify-content-center">
+                <div className="col covid-info col-md-3 m-1 col-12">
+                    <h1>1557347</h1>
+                    <h5>Total Case</h5>
                 </div>
-                <div className="covid-info col-md-4">
-                    <h1>Total Vaccinated</h1>
+                <div className="col covid-info col-md-3 m-1 col-12">
+                    <h1>55,213,069</h1>
+                    <h5>Total Vaccinated</h5>
                 </div>
-                <div className="covid-info col-md-4">
-                    <h1>Total Death</h1>
+                <div className="col covid-info col-md-3 m-1 col-12">
+                    <h1>27555</h1>
+                    <h5>Total Death</h5>
                 </div>
             </div>
         </div>
