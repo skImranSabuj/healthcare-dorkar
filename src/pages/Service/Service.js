@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 import Details from '../Details/Details';
+import './Service.css'
 
 // const cartIcon = <FontAwesomeIcon icon={faShoppingCart} />
 

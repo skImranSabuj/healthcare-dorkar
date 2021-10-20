@@ -4,7 +4,7 @@ import Service from '../Service/Service';
 import './Services.css'
 
 const Services = (props) => {
-    const [services] = useService();
+    const services = useService();
     console.log(services, "from Services!", typeof (services));
     return (
         <div>

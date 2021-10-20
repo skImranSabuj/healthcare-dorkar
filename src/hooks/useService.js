@@ -7,7 +7,8 @@ const useService = () => {
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);
-    return [services, setServices];
+    console.log('from use useService: ', services, typeof (services));
+    return services;
 };
 
 export default useService;

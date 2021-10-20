@@ -1,4 +1,4 @@
-[
+export const services = [
     {
         "id": 1,
         "service_name": "Appoint a Doctor",
@@ -42,7 +42,7 @@
         "delivery_time": 5,
         "img_url": "https://i.ibb.co/kcmYStR/s5.jpg",
         "description": "Oth dx proced-femur",
-        "details":"Nursing care  can help detect a condition, determine a diagnosis, plan treatment, check to see if treatment is working, or monitor the condition over time"
+        "details": "Nursing care  can help detect a condition, determine a diagnosis, plan treatment, check to see if treatment is working, or monitor the condition over time"
     },
     {
         "id": 6,
@@ -51,6 +51,6 @@
         "delivery_time": 6,
         "img_url": "https://i.ibb.co/3FGdRBQ/s6.jpg",
         "description": "Other plastic ops muscle",
-        "details":"Regular Checkups with doctors an online doctor booking service in dorkar which offers a better way for booking an appointment from home."
+        "details": "Regular Checkups with doctors an online doctor booking service in dorkar which offers a better way for booking an appointment from home."
     }
 ]

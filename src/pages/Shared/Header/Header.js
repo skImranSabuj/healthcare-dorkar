@@ -12,7 +12,7 @@ const signIn = <FontAwesomeIcon icon={faSignInAlt} />
 const Header = () => {
     // const user = {};
     const { user, logOut } = useAuth();
-    console.log(user)
+    // console.log(user)
     return (
         <div className="">
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">

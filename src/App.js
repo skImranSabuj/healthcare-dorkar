@@ -17,6 +17,7 @@ import Footer from './pages/Shared/Footer/Footer';
 import About from './pages/About/About';
 import Details from './pages/Details/Details';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
+import NotFound from './pages/NotFound/NotFound';
 
 
 function App() {
@@ -37,9 +38,9 @@ function App() {
             <PrivateRoute path="/services">
               <Services></Services>
             </PrivateRoute>
-            <PrivateRoute path="/details/:serviceId">
+            <Route path="/details/:serviceId">
               <Details></Details>
-            </PrivateRoute>
+            </Route>
             <Route path="/login">
               <Signin></Signin>
             </Route>
@@ -48,6 +49,9 @@ function App() {
             </Route>
             <Route path="/about">
               <About></About>
+            </Route>
+            <Route path="*">
+              <NotFound></NotFound>
             </Route>
           </Switch>
           <Footer></Footer>
